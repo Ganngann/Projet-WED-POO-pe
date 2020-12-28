@@ -10,5 +10,5 @@
     // PATTERN: /
     // CTRL: postsControleur
     // ACTION: index
-      include_once '../app/controleurs/postsControleur.php';
-      \App\Controleurs\PostsControleur\indexAction($connexion);
+      $ctrl = new App\Controleurs\PostsControleur();
+      $ctrl->indexAction();

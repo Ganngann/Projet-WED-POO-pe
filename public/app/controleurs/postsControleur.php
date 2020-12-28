@@ -5,18 +5,22 @@
     Contrôleur des posts
   */
 
-    namespace App\Controleurs\PostsControleur;
-    use App\Modeles\PostsModele;
+    namespace App\Controleurs;
+    use \App\Modeles\PostsGestionnaire;
 
-      function indexAction(\PDO $connexion) {
-        // Je mets dans $posts la liste des 10 derniers posts que je demande au modèle
-        include_once '../app/modeles/postsModele.php';
-        $posts = PostsModele\findAll($connexion);
+      class PostsControleur {
 
-        // Je charge la vue posts/index dans $content
-        GLOBAL $content, $title;
-        $title = "Wedding | Template";
-        ob_start();
-          include '../app/vues/posts/index.php';
-        $content = ob_get_clean();
+        public function indexAction() {
+          // Je mets dans $posts la liste des 10 derniers posts que je demande au gestionnaire
+          $gestionnaire = new PostsGestionnaire();
+          $posts = $gestionnaire->findAll('created_at', 5);
+  
+          // Je charge la vue posts/index dans $content
+          GLOBAL $content, $title;
+          $title = "Wedding | Template";
+          ob_start();
+            include '../app/vues/posts/index.php';
+          $content = ob_get_clean();
+        }
+
       }
