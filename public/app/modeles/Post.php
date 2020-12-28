@@ -7,7 +7,7 @@
 
     namespace App\Modeles;
 
-      class Post extends \Noyau\Classes\ClasseGenerique {
+      class Post extends \Noyau\Classes\ModeleGenerique {
 
         private $_id = null, $_title, $_content, $_postDate, $_image;
 

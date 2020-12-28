@@ -1,13 +1,14 @@
 <?php
 
   /*
-    ./noyau/classes/ClasseGenerique.php
-    Classe générique avec un hydrateur
+    ./noyau/classes/ModeleGenerique.php
+    Modèle générique avec un hydrateur
   */
 
     namespace Noyau\Classes;
 
-      abstract class ClasseGenerique {
+      abstract class ModeleGenerique {
+
         // CONSTRUCTEUR
         public function __construct(array $data = null) {
           if ($data):
@@ -26,4 +27,5 @@
             endforeach;
           endif;
         }
+        
       }
