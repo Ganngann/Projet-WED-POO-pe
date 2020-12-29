@@ -21,7 +21,7 @@
     </div>
 
     <div class="blog_details">
-      <a class="d-inline-block" href="single-blog.html">
+      <a class="d-inline-block" href="posts/<?php echo $post->getId(); ?>/<?php echo \Noyau\Classes\Utils::slugify($post->getTitle()); ?>">
         <h2><?php echo $post->getTitle(); ?></h2>
       </a>
       <p><?php echo $post->getContent(); ?></p>

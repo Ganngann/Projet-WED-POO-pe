@@ -9,7 +9,7 @@
 
       class Post extends \Noyau\Classes\ModeleGenerique {
 
-        private $_id = null, $_title, $_content, $_postDate, $_image;
+        private $_id = null, $_title, $_content, $_image;
 
         // GETTERS
         public function getId() {

@@ -24,6 +24,15 @@
           return $this->fromAssocToObject($tab, $this->_class);
         }
 
+        public function findOneById(int $id) {
+          $sql = "SELECT *
+                  FROM `{$this->_table}`
+                  WHERE id = :id;";
+          $rs = App::getConnexion()->prepare($sql);
+          $rs->bindValue(':id', $id, \PDO::PARAM_INT);
+          $rs->execute();
+          return new $this->_class($rs->fetch(\PDO::FETCH_ASSOC));
+        }
         // AUTRES METHODES
         protected function fromAssocToObject(array $rs, string $class) {
           $tab = [];
