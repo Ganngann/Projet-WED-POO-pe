@@ -44,4 +44,8 @@ use \Noyau\Classes\Template;
   </nav>
 </div>
 
-<?php Template::stopZone('content'); ?>
+<?php
+ Template::stopZone('content1');
+//  var_dump( Template::getZone('content1')); die;
+ 
+ ?>

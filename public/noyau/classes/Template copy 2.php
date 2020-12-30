@@ -12,17 +12,6 @@ abstract class Template
 
   private static $_zone = null;
 
-  // GETTERS
-  public static function getZone(string $zone)
-  {
-    return SELF::$_zone[$zone];
-  }
-
-  // SETTERS
-  private static function setZone(string $zone, string $content = '')
-  {
-    SELF::$_zone[$zone] = $content;
-  }
 
   public static function startZone()
   {
@@ -31,13 +20,20 @@ abstract class Template
 
   public static function stopZone(string $zone)
   {
-    SELF::setZone($zone, ob_get_clean());
+    global $$zone;
+    $$zone = ob_get_clean();
   }
+
+  public static function getZone(string $zone) {
+    return SELF::$_zone($zone);
+  }
+
 
   public static function addZones($zones)
   {
     foreach ($zones as $zone) :
-      SELF::setZone($zone);
+      SELF::$_zone($zone) = '';
+
     endforeach;
   }
 }
