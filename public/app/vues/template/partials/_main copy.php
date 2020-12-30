@@ -5,7 +5,9 @@
   */
 
 use Noyau\Classes\Template;
+
 ?>
+
 
 <main>
   <!--================Blog Area =================-->

@@ -20,11 +20,11 @@
           $r = $this->_table;
           $$r = $this->_gestionnaire->findAll('created_at', 5);
   
-          GLOBAL $content, $title;
+          // GLOBAL $content, $title;
           $title = "Wedding | Template";
-          ob_start();
+          // ob_start();
             include '../app/vues/'. $this->_table .'/index.php';
-          $content = ob_get_clean();
+          // $content = ob_get_clean();
         }
 
         public function showAction($data, string $field = 'id') {
@@ -32,11 +32,11 @@
           $methodName = 'findOneBy' . ucfirst($field);
           $$r = $this->_gestionnaire->$methodName($data);
 
-          GLOBAL $content, $title;
+          // GLOBAL $content, $title;
           $title = $$r->getTitle();
-          ob_start();
+          // ob_start();
             include '../app/vues/'. $this->_table .'/show.php';
-          $content = ob_get_clean();
+          // $content = ob_get_clean();
         }
 
       }

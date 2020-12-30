@@ -1,0 +1,48 @@
+CONSIGNES POO 2020
+---------------------------------------------
+
+Route par défaut:
+PATTERN: /
+5 derniers posts
+Le more posts doit fonctionner en AJAX
+
+Détails d'un post:
+PATTERN: /posts/id/slug
+
+Ajout d'un abonné
+PATTERN: /newsletter/add
+
+Template:
+Catégories + nombre de posts en dynamique 
+tags en dynamique
+
+----------------------------------------------
+
+1. Contrôleurs, modèles et gestionnaire en POO avec des classes génériques
+2. Slugification, tronquage et formatage des dates dans une classe "Utils"
+
+----------------------------------------------
+
+AJOUT DE FONCTIONNALITÉ
+
+Dans le fichier de paramètres, vous devez avoir: 
+	$zones = ['title', 'content1'];
+
+Dans le template, pour définir une zone dynamique, 
+on écrira :
+	Template::getZone('content1');
+
+
+ASTUCES:
+
+	1. App::start() devrait lancer le addZones du Template
+	2. La méthode Template::addZones($zones);
+           Hydrate une propriété statique $_zones
+	3. Dans le template : app/vues/template/index.php
+	   On charge le zone avec Template::getZone('content1');
+	4. L'idée est donc de créer des méthodes 
+	        - addZones(array), 
+  		- setZone(string, string)
+		- getZone(string) pour l'objet Template
+
+----------------------------------------------

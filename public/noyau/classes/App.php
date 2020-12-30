@@ -37,11 +37,13 @@
         }
 
         // AUTRES METHODES
-        public static function start() {
+        public static function start($zones) {
           if (SELF::$_start === false) {
             session_start();
             SELF::setRoot();
             SELF::setConnexion();
+                // var_dump($zones);die; 
+            Template::addZones($zones);
             SELF::$_start = true;
           }
         }

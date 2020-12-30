@@ -10,7 +10,7 @@
       require_once '../vendor/autoload.php';
 
     // Démarrage de l'application
-      \Noyau\Classes\App::start();
+      \Noyau\Classes\App::start($zones);
 
     // Chargement du routeur
     // Pour mettre du contenu dans les zones dynamiques

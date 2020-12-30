@@ -6,18 +6,8 @@
     Variables disponibles:
       - $post: ARRAY(OBJ Post(id, title, content, image))
   */
-  use \Noyau\Classes\Template;
 
 ?>
-
-<?php Template::startZone(); ?>
-
-<?php $title = $post->getTitle();?>
-
-<?php Template::stopZone('title'); ?>
-
-
-    <?php Template::startZone(); ?>
 
 <div class="single-post">
   <div class="feature-img">
@@ -41,4 +31,3 @@
     </div>
   </div>
 </div>
-<?php Template::stopZone('content'); ?>

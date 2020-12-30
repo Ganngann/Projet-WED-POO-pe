@@ -9,7 +9,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+
     <title><?php echo $title; ?></title>
+    <?php 
+    // var_dump($title);die; 
+    ?>
+
     <base href="<?php echo \Noyau\Classes\App::getRoot(); ?>" target="_top">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
