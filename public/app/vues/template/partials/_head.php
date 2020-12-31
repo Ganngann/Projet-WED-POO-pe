@@ -3,6 +3,7 @@
   /*
     ./app/vues/template/partials/_head.php
   */
+  use \Noyau\Classes\Template;
 
 ?>
 
@@ -10,10 +11,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title><?php echo $title; ?></title>
-    <?php 
-    // var_dump($title);die; 
-    ?>
+    <title><?php echo(Template::getZone('title')) ?></title>
 
     <base href="<?php echo \Noyau\Classes\App::getRoot(); ?>" target="_top">
     <meta name="description" content="">

@@ -9,7 +9,7 @@
 
       class Post extends \Noyau\Classes\ModeleGenerique {
 
-        private $_id = null, $_title, $_content, $_image;
+        private $_id = null, $_title, $_content, $_image, $_created_at;
 
         // GETTERS
         public function getId() {
@@ -23,6 +23,9 @@
         }
         public function getImage() {
           return $this->_image;
+        }
+        public function getCreated_at() {
+          return $this->_created_at;
         }
 
         // SETTERS
@@ -44,6 +47,11 @@
         public function setImage(string $data = null) {
           if (isset($data)):
             $this->_image = $data;
+          endif;
+        }
+        public function setCreated_at(string $data = null) {
+          if (isset($data)):
+            $this->_created_at = $data;
           endif;
         }
 

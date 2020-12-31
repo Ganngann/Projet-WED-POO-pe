@@ -19,10 +19,10 @@
         public function indexAction() {
           $r = $this->_table;
           $$r = $this->_gestionnaire->findAll('created_at', 5);
-  
           // GLOBAL $content, $title;
-          $title = "Wedding | Template";
+          // $title = "Wedding | Template";
           // ob_start();
+          // var_dump($$r);
             include '../app/vues/'. $this->_table .'/index.php';
           // $content = ob_get_clean();
         }

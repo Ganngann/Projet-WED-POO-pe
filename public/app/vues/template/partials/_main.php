@@ -14,7 +14,6 @@ use Noyau\Classes\Template;
       <div class="row">
         <div class="col-lg-8 mb-5 mb-lg-0">
           <?php
-          // echo $content;
           echo(Template::getZone('content1'))
           ?>
         </div>
