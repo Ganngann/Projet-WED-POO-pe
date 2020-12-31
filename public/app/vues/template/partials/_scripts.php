@@ -42,5 +42,5 @@
 <script src="./assets/js/main.js"></script>
 
 <?php
-echo (Template::getZone('zoneScripts'))
+echo (\Noyau\Classes\Template::getZone('zoneScripts'))
 ?>

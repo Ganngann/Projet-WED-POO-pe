@@ -4,8 +4,7 @@
     ./app/vues/template/index.php
     TEMPLATE GENERAL
   */
-
-?>
+  ?>
 
 <!doctype html>
 <html class="no-js" lang="zxx">

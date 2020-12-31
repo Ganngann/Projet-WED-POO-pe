@@ -13,5 +13,5 @@
     // CTRL: PostsControleur
     // ACTION: index
       $ctrl = new App\Controleurs\PostsControleur();
-      $ctrl->indexAction();
+      $ctrl->indexAction('created_at', 5, 0);
     endif;

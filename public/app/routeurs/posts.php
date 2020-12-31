@@ -15,4 +15,11 @@ switch ($_GET['posts']):
     // ACTION: show
     $ctrl->showAction($_GET['id']);
     break;
+    case 'ajax':
+      // DETAIL D'UN POST
+      // PATTERN: index?posts=show&id=x
+      // CTRL: postsControleur
+      // ACTION: show
+      $ctrl->ajaxAction('created_at', 5, $_GET['offset']);
+      break;
 endswitch;

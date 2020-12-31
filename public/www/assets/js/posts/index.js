@@ -3,28 +3,31 @@
  */
 
 $(function () {
-  let offset = 10;
+  let offset = 5;
 
-  $("#older-posts").click(function (e) {
+  $("#morePosts").click(function (e) {
     e.preventDefault();
     $.ajax({
       // url: '?older-posts=' + offset,  => Manière moins détaillé
-      url: "?ajax=older-posts",
+      url: "?posts=ajax",
       data: {
         offset: offset,
       },
       method: "get",
       success: function (reponsePHP) {
-        $("#liste-posts")
+        // console.log(reponsePHP);
+
+        $("#blog")
           .append(reponsePHP)
-          .find(".post-preview:nth-last-child(-n+10)")
+          .find(".post-preview:nth-last-child(-n+5)")
           .hide()
           .fadeIn();
-        offset += 10;
+        offset += 5;
       },
       error: function () {
         alert("Problème durant la transaction !");
       },
     });
+    // console.log('coucou');
   });
 });

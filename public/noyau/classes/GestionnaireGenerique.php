@@ -12,7 +12,7 @@
         protected $_table, $_class;
 
         // METHODES CRUD
-        public function findAll(string $tri, int $nbr, int $offset) {
+        public function findAll(string $tri, int $nbr, int $offset = 0) {
           $sql = "SELECT *
                   FROM `{$this->_table}`
                   ORDER BY `$tri` DESC
