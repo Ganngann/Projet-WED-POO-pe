@@ -78,4 +78,7 @@ lien1.onclick = function() {
 Template::stopZone('content1');
 //  var_dump( Template::getZone('content1')); die;
 
+Template::setZone('zoneScripts', '<script src="js/posts/index.js"></script>');
+
 ?>
+

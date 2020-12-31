@@ -15,4 +15,4 @@
       // $title   = '$title';
       // $content = '$content';
 
-      $zones = array('title','content1');
+      $zones = array('title','content1','zoneScripts');

@@ -12,12 +12,14 @@
         protected $_table, $_class;
 
         // METHODES CRUD
-        public function findAll(string $tri, int $nbr) {
+        public function findAll(string $tri, int $nbr, int $offset) {
           $sql = "SELECT *
                   FROM `{$this->_table}`
                   ORDER BY `$tri` DESC
-                  LIMIT $nbr;";
+                  LIMIT $nbr
+                  OFFSET :offset;";
           $rs = App::getConnexion()->prepare($sql);
+          $rs->bindValue(':offset', $offset, \PDO::PARAM_INT);
           $rs->execute();
           $tab = $rs->fetchAll(\PDO::FETCH_ASSOC);
 

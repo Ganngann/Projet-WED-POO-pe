@@ -5,7 +5,7 @@
     ROUTEUR PRINCIPAL DU SITE PUBLIC
   */
 
-    if (isset($_GET['postID'])):
+    if (isset($_GET['posts'])):
     include_once '../app/routeurs/posts.php';
     else:
     // ROUTE PAR DEFAUT
