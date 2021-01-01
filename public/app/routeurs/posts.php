@@ -20,6 +20,6 @@ switch ($_GET['posts']):
       // PATTERN: index?posts=show&id=x
       // CTRL: postsControleur
       // ACTION: show
-      $ctrl->ajaxAction('created_at', 5, $_GET['offset']);
+      $ctrl->ajaxMoreAction('created_at', 5, $_GET['offset']);
       break;
 endswitch;

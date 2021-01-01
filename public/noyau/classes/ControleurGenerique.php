@@ -44,11 +44,17 @@ abstract class ControleurGenerique
     // $content = ob_get_clean();
   }
 
-
+  public function addAction($datas, $datasTypes = null)
+  {
+    $r = $this->_table;
+    $$r = $this->_gestionnaire->insert($datas, $datasTypes);
+    // Je redirige vers la liste
+    // header('location: ' . BASE_URL . 'confirmation');
+  }
 
   // ACTION AJAX ----------------------------------------------------------------
 
-  public function ajaxAction(string $tri, int $nbr, int $offset = 0)
+  public function ajaxMoreAction(string $tri, int $nbr, int $offset = 0)
   {
     $r = $this->_table;
     $$r = $this->_gestionnaire->findAll($tri, $nbr, $offset);
