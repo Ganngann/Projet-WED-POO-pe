@@ -1,18 +1,20 @@
 <?php
 
-  /*
+/*
     ./app/modeles/postsModele.php
     Gestionnaire des posts
   */
 
-    namespace App\Modeles;
-    use \Noyau\Classes\App;
+namespace App\Modeles;
 
-      class PostsGestionnaire extends \Noyau\Classes\GestionnaireGenerique {
+use \Noyau\Classes\App;
 
-        public function __construct() {
-          $this->_table = 'posts';
-          $this->_class = '\App\Modeles\Post';
-        }
-        
-      }
+class PostsGestionnaire extends \Noyau\Classes\GestionnaireGenerique
+{
+
+  public function __construct()
+  {
+    $this->_table = 'posts';
+    parent::__construct();
+  }
+}

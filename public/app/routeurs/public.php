@@ -22,6 +22,6 @@
     // CTRL: PostsControleur
     // ACTION: index
       $ctrl = new App\Controleurs\PostsControleur();
-      $ctrl->indexAction('created_at', 5, 0);
+      $ctrl->indexAction(5, 0, 'created_at',"DESC");
       
     endif;

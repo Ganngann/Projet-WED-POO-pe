@@ -15,12 +15,17 @@ abstract class GestionnaireGenerique
 
   protected $_table, $_class;
 
+  public function __construct() {
+    $this->_class = '\App\Modeles\\' . ucfirst(substr($this->_table, 0, -1));
+  }
+
   // METHODES CRUD
-  public function findAll(string $tri, int $nbr, int $offset = 0)
+
+  public function findAll(int $nbr, int $offset, string $tri, string $ordre)
   {
     $sql = "SELECT *
                   FROM `{$this->_table}`
-                  ORDER BY `$tri` DESC
+                   ORDER BY `$tri` $ordre
                   LIMIT $nbr
                   OFFSET :offset;";
     $rs = App::getConnexion()->prepare($sql);
@@ -30,6 +35,18 @@ abstract class GestionnaireGenerique
 
     return $this->fromAssocToObject($tab, $this->_class);
   }
+
+  public function countBy($key, $fromTable, $element, $elementKey) {
+    $sql = "SELECT COUNT($key) AS occurences
+    FROM $fromTable
+    where $element = $elementKey;";
+    $rs = App::getConnexion()->prepare($sql);
+    $rs->execute();
+
+    return $rs->fetch(\PDO::FETCH_ASSOC);
+ }
+
+
 
   public function findOneById(int $id)
   {

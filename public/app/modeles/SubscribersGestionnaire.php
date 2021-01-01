@@ -12,7 +12,7 @@
 
         public function __construct() {
           $this->_table = 'subscribers';
-          $this->_class = '\App\Modeles\Subscribers';
+          parent::__construct();
         }
         
       }

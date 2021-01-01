@@ -24,7 +24,13 @@
 
         <aside class="single_sidebar_widget post_category_widget">
             <h4 class="widget_title">Category</h4>
-            <ul class="list cat-list">
+
+            <?php 
+                $ctrl = new App\Controleurs\CategoriesControleur();
+                $ctrl->indexAction();
+            ?>
+
+            <!-- <ul class="list cat-list">
                 <li>
                     <a href="#" class="d-flex">
                         <p>Restaurant food</p>
@@ -61,7 +67,7 @@
                         <p>09</p>
                     </a>
                 </li>
-            </ul>
+            </ul> -->
         </aside>
 
         <aside class="single_sidebar_widget tag_cloud_widget">

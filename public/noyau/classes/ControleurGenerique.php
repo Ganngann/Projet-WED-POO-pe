@@ -18,10 +18,10 @@ abstract class ControleurGenerique
     $this->_gestionnaire = new $gestionnaireName;
   }
 
-  public function indexAction(string $tri, int $nbr, int $offset = 0)
+  public function indexAction(int $nbr = 999, int $offset = 0, string $tri = "id", string $ordre = "ASC")
   {
     $r = $this->_table;
-    $$r = $this->_gestionnaire->findAll($tri, $nbr, $offset);
+    $$r = $this->_gestionnaire->findAll($nbr, $offset, $tri, $ordre);
     // GLOBAL $content, $title;
     // $title = "Wedding | Template";
     // ob_start();
@@ -38,11 +38,22 @@ abstract class ControleurGenerique
     $$r = $this->_gestionnaire->$methodName($data);
 
     // GLOBAL $content, $title;
-    $title = $$r->getTitle();
+    // $title = $$r->getTitle();
     // ob_start();
     include '../app/vues/' . $this->_table . '/show.php';
     // $content = ob_get_clean();
   }
+
+  public function countByAction($key, $fromTable, $element, $elementKey)
+  {
+    $r = $this->_table;
+    $$r = $this->_gestionnaire->countBy($key, $fromTable, $element, $elementKey);
+    if ($$r) :
+      return $$r;
+    endif;
+  }
+
+
 
 
   // ACTION AJAX ----------------------------------------------------------------
