@@ -44,15 +44,18 @@ abstract class ControleurGenerique
     // $content = ob_get_clean();
   }
 
-  public function addAction($datas, $datasTypes = null)
+
+  // ACTION AJAX ----------------------------------------------------------------
+
+
+  public function ajaxAddAction($datas, $datasTypes = null)
   {
     $r = $this->_table;
     $$r = $this->_gestionnaire->insert($datas, $datasTypes);
-    // Je redirige vers la liste
-    // header('location: ' . BASE_URL . 'confirmation');
+    if ($$r) :
+      include '../app/vues/' . $this->_table . '/done.php';
+    endif;
   }
-
-  // ACTION AJAX ----------------------------------------------------------------
 
   public function ajaxMoreAction(string $tri, int $nbr, int $offset = 0)
   {

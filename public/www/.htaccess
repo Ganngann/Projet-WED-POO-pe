@@ -20,25 +20,6 @@ RewriteEngine on
         RewriteRule ^posts\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*)$ index.php?posts=show&id=$1 [L]
 
 
-
-# --------------------------------------------------
-# ROUTE DE LA NEWSLETTER
-# --------------------------------------------------
-        #  PATTERN: newsletter
-
-RewriteRule ^newsletter$ index.php?subscribers=add [L]
-
-
-# --------------------------------------------------
-# ROUTE DE LA CONFIRMATION
-# --------------------------------------------------
-    #  PATTERN:confirmation
-
-RewriteRule ^confirmation$ index.php?subscribers=confirm [L]
-
-
-
-
     # ROUTE PAR DEFAUT:
         # PATTERN: /
         # Liste des posts

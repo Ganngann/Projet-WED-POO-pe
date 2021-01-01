@@ -12,13 +12,13 @@ switch ($_GET['subscribers']):
     // insertion d'un email dans la db
     // PATTERN: index?subscribers=add
     // CTRL: subscribersControleur
-    // ACTION: addAction
+    // ACTION: ajaxAddAction
 
     // ajout des champs manquants dans la variable $_POST (champ obligatoir pour la db)
     $_POST['created_at'] = date("Y-m-d H:i:s");
 
-    // appel de la fonction addAction(données introduites dans la db, format de donnée attendu par bindValue()(facultatif))
-    $ctrl->addAction($_POST, array('email' => PDO::PARAM_STR, 'created_at' => PDO::PARAM_STR));
+    // appel de la fonction ajaxAddAction(données introduites dans la db, format de donnée attendu par bindValue()(facultatif))
+    $ctrl->ajaxAddAction($_POST, array('email' => PDO::PARAM_STR, 'created_at' => PDO::PARAM_STR));
     break;
 
 // case 'confirm':

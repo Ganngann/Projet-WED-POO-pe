@@ -1,9 +1,9 @@
 <?php
 
-  /*
+/*
     ./app/vues/template/partials/_aside.php
   */
-  
+
 ?>
 
 <div class="col-lg-4">
@@ -12,16 +12,13 @@
             <form action="#">
                 <div class="form-group">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder='Search Keyword'
-                            onfocus="this.placeholder = ''"
-                            onblur="this.placeholder = 'Search Keyword'">
+                        <input type="text" class="form-control" placeholder='Search Keyword' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'">
                         <div class="input-group-append">
                             <button class="btns" type="button"><i class="ti-search"></i></button>
                         </div>
                     </div>
                 </div>
-                <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-                    type="submit">Search</button>
+                <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn" type="submit">Search</button>
             </form>
         </aside>
 
@@ -102,11 +99,12 @@
 
             <form action="newsletter" method="post">
                 <div class="form-group">
-                    <input type="email" name="email" id="email" class="form-control" onfocus="this.placeholder = ''"
-                        onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
+                    <input type="email" name="email" id="email" class="form-control" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
+                    <div id="confirmation"></div>
                 </div>
-                <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-                    type="submit">Subscribe</button>
+                <button id="subscribersAdd" class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn" type="submit">Subscribe</button>
+
             </form>
+
         </aside>
     </div>

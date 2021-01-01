@@ -20,7 +20,7 @@ class SubscribersControleur extends \Noyau\Classes\ControleurGenerique
 
 
 
-  // public function addAction(\PDO $connexion, string $email)
+  // public function ajaxAddAction(\PDO $connexion, string $email)
   // {
   //   // Je demande au modèle d'ajouter un abonne
   //   include_once '../app/modeles/abonnesModele.php';

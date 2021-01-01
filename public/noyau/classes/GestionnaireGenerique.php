@@ -56,7 +56,8 @@ abstract class GestionnaireGenerique
     // bindArrayValue(objetPDO, données, type de donnée) cette méthode personalisée permet de faire un bindValue de plusieures valeurs
     // sans en connaitre le nombre. je l'explique plus en détail ci dessous
     $this->bindArrayValue($rs, $datas, $datasTypes);
-    $rs->execute();
+
+    return $rs->execute();
   }
 
 
@@ -74,6 +75,7 @@ abstract class GestionnaireGenerique
   }
 
   // Cette méthode permet de faire un bindValue de plusieures valeurs a la fois.
+  // elle est issue d'une contribution sur la doccu officiele: https://www.php.net/manual/fr/pdostatement.bindvalue.php#104939
   // $rs : objetPDO
   // $array : array associatif contenant les données à binder
   // $typeArray : array associatif contenant le type de donnée PDO (facultatif)
