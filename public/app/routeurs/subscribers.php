@@ -5,7 +5,7 @@
     ROUTEUR DES subscribers
   */
 
-$ctrl = new App\Controleurs\subscribersControleur();
+$ctrl = new App\Controleurs\SubscribersControleur();
 
 switch ($_GET['subscribers']):
   case 'add':

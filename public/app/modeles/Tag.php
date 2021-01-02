@@ -1,15 +1,15 @@
 <?php
 
 /*
-    ./app/modeles/Categorie.php
-    Modèle d'une Categorie
+    ./app/modeles/Tags.php
+    Modèle d'une Tags
   */
 
 namespace App\Modeles;
 
-use \App\Modeles\CategoriesControleur;
+use \App\Modeles\TagsControleur;
 
-class Categorie extends \Noyau\Classes\ModeleGenerique
+class Tag extends \Noyau\Classes\ModeleGenerique
 {
 
     private $_id = null, $_name, $_created_at, $_numberOfCurencies;
@@ -62,7 +62,7 @@ class Categorie extends \Noyau\Classes\ModeleGenerique
     public function __construct(array $data = null) {
         if ($data):
           $this->hydrater($data);
-          $this->setNumberOfCurencies($this->counter("id", "posts", "categorie_id", $this->_id));
+          $this->setNumberOfCurencies($this->counter("post_id", "posts_has_tags", "tag_id", $this->_id));
         endif;
       }
 

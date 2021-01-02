@@ -72,7 +72,11 @@
 
         <aside class="single_sidebar_widget tag_cloud_widget">
             <h4 class="widget_title">Tag Clouds</h4>
-            <ul class="list">
+            <?php 
+                $ctrl = new App\Controleurs\TagsControleur();
+                $ctrl->indexAction();
+            ?>
+            <!-- <ul class="list">
                 <li>
                     <a href="#">project</a>
                 </li>
@@ -97,7 +101,7 @@
                 <li>
                     <a href="#">illustration</a>
                 </li>
-            </ul>
+            </ul> -->
         </aside>
 
         <aside class="single_sidebar_widget newsletter_widget">

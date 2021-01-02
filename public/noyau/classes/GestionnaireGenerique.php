@@ -15,7 +15,8 @@ abstract class GestionnaireGenerique
 
   protected $_table, $_class;
 
-  public function __construct() {
+  public function __construct()
+  {
     $this->_class = '\App\Modeles\\' . ucfirst(substr($this->_table, 0, -1));
   }
 
@@ -36,7 +37,10 @@ abstract class GestionnaireGenerique
     return $this->fromAssocToObject($tab, $this->_class);
   }
 
-  public function countBy($key, $fromTable, $element, $elementKey) {
+
+
+  public function countBy($key, $fromTable, $element, $elementKey)
+  {
     $sql = "SELECT COUNT($key) AS occurences
     FROM $fromTable
     where $element = $elementKey;";
@@ -44,7 +48,7 @@ abstract class GestionnaireGenerique
     $rs->execute();
 
     return $rs->fetch(\PDO::FETCH_ASSOC);
- }
+  }
 
 
 
