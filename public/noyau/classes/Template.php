@@ -19,7 +19,7 @@ abstract class Template
   }
 
   // SETTERS
-  public static function setZone(string $zone, string $content = 'valeur par defaut')
+  public static function setZone(string $zone, string $content = '')
   {
     SELF::$_zone[$zone] = $content;
   }

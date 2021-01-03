@@ -11,23 +11,14 @@ RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
 
 #RewriteLog "/log/rewrite.log"
 
- #RewriteBase /POO_Serveur/Projet%20WED%20POO/Projet%20WED%20POO/public/www/
-
 #--------------------------------------------------
 # Règles de réécriture d'URL :
 #--------------------------------------------------
 
 # Routes publiques --------------------------------
 
-    # DETAIL D'UN POST:
-        # PATTERN: posts/{id}/{slug}
-        # URL: index.php?postID=x
-     #   RewriteRule ^posts\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*)$ index.php?posts=show&id=$1 [L]
-
 
     # ROUTE PAR DEFAUT:
-        # PATTERN: /
-        # Liste des posts
         # le [QSA] empeche apache de remplacer $1 par "index.php"
         RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
 
