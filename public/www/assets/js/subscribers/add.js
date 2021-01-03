@@ -14,14 +14,13 @@ $(function () {
 
     if (isEmail(email)) {
       $.ajax({
-        url: "?subscribers=add",
+        url: "ajaxSubscribersAdd",
         data: {
           email: email,
         },
         method: "post",
         success: function (reponsePHP) {
           if (reponsePHP) {
-            // console.log(reponsePHP);
             $("#confirmation").html(reponsePHP).hide().fadeIn();
           } else {
             $("#confirmation")

@@ -55,4 +55,12 @@
           endif;
         }
 
+        // public function __construct(array $data = null) {
+        //   if ($data):
+        //     $auteurctrl = new auteurControleur
+        //     $auteur = $auteurctrl->findonebyid($_id) ;
+        //   endif;
+        // }
+  
+
       }

@@ -31,7 +31,7 @@ class Router
 
   public function post($path, $callable, $name = null)
   {
-    return $this->add($path, $callable, $name, 'POSTS');
+    return $this->add($path, $callable, $name, 'POST');
   }
 
   private function add($path, $callable, $name, $method)
@@ -53,7 +53,6 @@ class Router
       throw new RouteException('REQUEST_METHOD does not exist');
     }
     foreach ($this->routes[$_SERVER['REQUEST_METHOD']] as $route) {
-      // print_r($this->namedRoute);
       if ($route->match($this->url)) {
         return $route->call();
       }

@@ -9,7 +9,7 @@ $(function () {
     e.preventDefault();
     $.ajax({
       // url: '?older-posts=' + offset,  => Manière moins détaillé
-      url: "?posts=ajax",
+      url: "ajaxMoreAction",
       data: {
         offset: offset,
       },
@@ -28,6 +28,5 @@ $(function () {
         alert("Problème durant la transaction !");
       },
     });
-    // console.log('coucou');
   });
 });

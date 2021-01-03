@@ -22,13 +22,7 @@ abstract class ControleurGenerique
   {
     $r = $this->_table;
     $$r = $this->_gestionnaire->findAll($nbr, $offset, $tri, $ordre);
-    // GLOBAL $content, $title;
-    // $title = "Wedding | Template";
-    // ob_start();
-    // var_dump($$r);
-
     include '../app/vues/' . $this->_table . '/index.php';
-    // $content = ob_get_clean();
   }
 
   public function showAction($data, string $field = 'id')
@@ -36,12 +30,7 @@ abstract class ControleurGenerique
     $r = substr($this->_table, 0, -1);
     $methodName = 'findOneBy' . ucfirst($field);
     $$r = $this->_gestionnaire->$methodName($data);
-
-    // GLOBAL $content, $title;
-    // $title = $$r->getTitle();
-    // ob_start();
     include '../app/vues/' . $this->_table . '/show.php';
-    // $content = ob_get_clean();
   }
 
   public function countByAction($key, $fromTable, $element, $elementKey)
@@ -68,15 +57,11 @@ abstract class ControleurGenerique
     endif;
   }
 
-  public function ajaxMoreAction(string $tri, int $nbr, int $offset = 0)
+  public function ajaxMoreAction($nbr, $offset, $tri, $ordre)
   {
     $r = $this->_table;
-    $$r = $this->_gestionnaire->findAll($tri, $nbr, $offset);
-    // GLOBAL $content, $title;
-    // $title = "Wedding | Template";
-    // ob_start();
+    $$r = $this->_gestionnaire->findAll($nbr, $offset, $tri, $ordre);
 
     include '../app/vues/' . $this->_table . '/liste.php';
-    // $content = ob_get_clean();
   }
 }
