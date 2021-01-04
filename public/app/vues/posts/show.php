@@ -27,6 +27,8 @@ Template::setZone('title', $post->getTitle());
   </div>
 </div>
 
+
+<?php echo $post->getAuthor(); ?>
 <div class="blog-author">
   <div class="media align-items-center">
     <img src="assets/img/blog/author.png" alt="">
@@ -39,4 +41,5 @@ Template::setZone('title', $post->getTitle());
     </div>
   </div>
 </div>
+
 <?php Template::stopZone('content1'); ?>

@@ -7,18 +7,9 @@
       - $post: ARRAY(OBJ Post(id, title, content, image))
   */
 
+use \Noyau\Classes\Template;
+
 ?>
-
-<div class="single-post">
-  <div class="feature-img">
-    <img class="img-fluid" src="assets/img/blog/<?php echo $post->getImage(); ?>" alt="">
-  </div>
-  <div class="blog_details">
-    <h2><?php echo $post->getTitle(); ?></h2>
-    <p><?php echo $post->getContent(); ?></p>
-  </div>
-</div>
-
 <div class="blog-author">
   <div class="media align-items-center">
     <img src="assets/img/blog/author.png" alt="">

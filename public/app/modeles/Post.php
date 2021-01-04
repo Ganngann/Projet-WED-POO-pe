@@ -9,7 +9,7 @@
 
       class Post extends \Noyau\Classes\ModeleGenerique {
 
-        private $_id = null, $_title, $_content, $_image, $_created_at;
+        private $_id = null, $_title, $_content, $_image, $_created_at, $_author;
 
         // GETTERS
         public function getId() {
@@ -26,6 +26,9 @@
         }
         public function getCreated_at() {
           return $this->_created_at;
+        }
+        public function getAuthor() {
+          return $this->_author;
         }
 
         // SETTERS
@@ -54,13 +57,21 @@
             $this->_created_at = $data;
           endif;
         }
+        public function setAuthor(string $data = null) {
+          if (isset($data)):
+            $this->_author = $data;
+          endif;
+        }
 
-        // public function __construct(array $data = null) {
-        //   if ($data):
-        //     $auteurctrl = new auteurControleur
-        //     $auteur = $auteurctrl->findonebyid($_id) ;
-        //   endif;
-        // }
+        public function __construct(array $data = null) {
+          if ($data):
+            parent::__construct($data);
+            $auteurctrl = new \App\Controleurs\AuthorsControleur();
+            // var_dump($this->_id);
+            $this->_author = $auteurctrl->showAction($this->_id) ;
+            // var_dump($this->_author);
+          endif;
+        }
   
 
       }

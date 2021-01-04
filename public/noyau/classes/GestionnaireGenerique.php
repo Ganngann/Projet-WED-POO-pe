@@ -60,6 +60,10 @@ abstract class GestionnaireGenerique
     $rs = App::getConnexion()->prepare($sql);
     $rs->bindValue(':id', $id, \PDO::PARAM_INT);
     $rs->execute();
+    // var_dump(new $this->_class());
+//     $test = new $this->_class($rs->fetch(\PDO::FETCH_ASSOC));
+//         var_dump($test);
+// die;
     return new $this->_class($rs->fetch(\PDO::FETCH_ASSOC));
   }
 

@@ -11,7 +11,7 @@ abstract class ModeleGenerique
 {
 
   // CONSTRUCTEUR
-  public function __construct(array $data = null)
+  public function __construct($data = null)
   {
     if ($data) :
       $this->hydrater($data);
